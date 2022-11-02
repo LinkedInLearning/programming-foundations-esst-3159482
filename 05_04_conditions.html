@@ -8,14 +8,14 @@
 </head>
 <body>
     Bitte öffnen Sie die "Entwicklertools" bzw. "Werkzeuge für Web-Entwickler" mit <strong>Strg + Shift + I</strong> 
-    und klicken anschließend auf <strong>Konsole</strong>.
+    und klicken anschließend auf <strong>Konsole</strong>.<br>
     <script>
         if( false ) {
             console.log("Dieser Code wird nicht gezeigt.");
         }
 
         if( true ) {
-            console.log("Dieser Code wird gezeigt.");
+            console.log("Dieser Code wird angezeigt.");
         }
 
         let a = 1;
@@ -24,22 +24,28 @@
         }
 
         let b = 2;
-        if (a == 1 && b == 2 ) {
-            console.log( "a ist 4 und b ist 5" );
+        if ( a == 1 && b == 2 ) {
+            console.log( "a ist 2 und b ist 2" );
         }
 
-        if (a == 8 || b == 2 ) {
-            console.log( "a ist 4 und b ist 5" );
+        if ( a == 8 || b == 2 ) {
+            console.log( "Code in Zeile 32:", a, b );
         }
 
-        if (a == b) {
+        if ( a == b ) {
             console.log( "a ist b" );
         } else {
             console.log( "a ist ungleich b");
         }
 
-        if (a > 0 ) {
+        if ( a > 0 ) {
             console.log( "a ist größer 0" );
+        }
+
+        let password = prompt( "Bitte geben Sie das Passwort ein:" );
+        if ( password == "geheim" ) {
+            document.body.innerHTML="";
+            document.write( "Dieser Text hier ist geheim.");
         }
     </script>
 </body>

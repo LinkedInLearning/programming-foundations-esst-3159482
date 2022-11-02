@@ -12,7 +12,10 @@
     <script>
         let today = new Date();
 
-        console.log( "Es ist " + today.getHours() + ":" + today.getMinutes() + " Uhr." );
-    </script>
+        console.log( 
+            "Es ist " 
+            + today.getHours() + ":" 
+            + today.getMinutes().toString().padStart( 2, '0' ) + " Uhr." );
+</script>
 </body>
 </html>

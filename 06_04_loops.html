@@ -8,20 +8,27 @@
 </head>
 <body>
     Bitte öffnen Sie die "Entwicklertools" bzw. "Werkzeuge für Web-Entwickler" mit <strong>Strg + Shift + I</strong> 
-    und klicken anschließend auf <strong>Konsole</strong>.
+    und klicken anschließend auf <strong>Konsole</strong>.<br>
     <br>
     <script>
         for ( let i = 0; i <= 10; i = i + 1 ) {
             console.log( "i=" + i );
         }
 
+        console.log( "-------------------" );
+
         let a = 10;
+        let i = 0;
         while ( a > 5 ) {
             console.log( "a=" + a);
             a--;
+
+            // i++;
+            // if( i > 10 ) {
+            //     break;
+            // }
         }
 
-        document.write( '<br>' );
         let space = 4;
         let tree = 1;
         while ( space >= 0 ) {  
@@ -32,7 +39,6 @@
                 document.write( 'X' );
             }
             
-
             space = space - 1;
             tree = tree + 2;
 

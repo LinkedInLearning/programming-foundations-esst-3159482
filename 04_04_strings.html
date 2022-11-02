@@ -7,15 +7,16 @@
     <title>Zeichenketten</title>
 </head>
 <body>
-    Bitte öffnen Sie die "Entwicklertools" bzw. "Werkzeuge für Web-Entwickler" mit <strong>Strg + Shift + I</strong> 
-    und klicken anschließend auf <strong>Konsole</strong>.
     <script>
         let prename = "Thomas";
         let surname = "Rose";
 
-        //surname = surname * 1;
+        // surname = surname * 1;
+        // surname = surname + 1;
 
         document.write("Guten Tag, " + prename + " " + surname);
+
+        console.log( prename.substring( 0, 1 ) + prename.substring( 2, 4 ) );
     </script>
 </body>
 </html>
