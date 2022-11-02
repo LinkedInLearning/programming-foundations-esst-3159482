@@ -9,8 +9,8 @@
     <style>
         #field {
             position: relative;
-            width: 500px;
-            height: 200px;
+            width: 800px;
+            height: 500px;
             border: 1px solid black;
         }
 
@@ -49,14 +49,14 @@
         var spacecraft = document.querySelector('#spacecraft');
         var x = 235;
         var asteroids = new Array(
-            { x: 0, y: 0 },
-            { x: 0, y: 0 },
-            { x: 0, y: 0 },
-            { x: 0, y: 0 },
-            { x: 0, y: 0 }
+            { x: 100, y: 0 },
+            { x: 200, y: 20 },
+            { x: 300, y: 10 },
+            { x: 500, y: 30 },
+            { x: 700, y: 40 }
         );
 
-        var stepper = window.setInterval(moveAsteroids, 100);
+        var stepper = window.setInterval(moveAsteroids, 50);
 
         spacecraft.style.left = x + 'px';
 
@@ -64,10 +64,10 @@
             e = e || window.event;
 
             if (e.keyCode == 39) {
-                x = x + 20;
+                x = x + 15;
             }
             if (e.keyCode == 37) {
-                x = x - 20;
+                x = x - 15;
             }
 
             spacecraft.style.left = x + 'px';
@@ -75,34 +75,34 @@
 
         function moveAsteroids() {
             for (let i = 0; i < asteroids.length; i++) {
-                asteroids[i].y += (i + 6);
+                asteroids[ i ].y += ( i + 6 );
                 displayAsteroid(i);
 
-                if (asteroids[i].y >= 150) {
+                if (asteroids[ i ].y >= 450) {
                     detectCollision(i);
                 }
 
-                if (asteroids[i].y >= 180) {
-                    rebirthAsteroid(i);
+                if (asteroids[ i ].y >= 480) {
+                    rebirthAsteroid( i );
                 }
             }
         }
 
-        function rebirthAsteroid(i) {
-            asteroids[i].y = 0;
-            asteroids[i].x = Math.random() * 480;
-            displayAsteroid(i);
+        function rebirthAsteroid( i ) {
+            asteroids[ i ].y = 0;
+            asteroids[ i ].x = Math.random() * 750;
+            displayAsteroid( i );
         }
 
-        function displayAsteroid(i) {
+        function displayAsteroid( i ) {
             let asteroid = document.querySelector('#asteroid' + i);
-            asteroid.style.top = asteroids[i].y + 'px';
-            asteroid.style.left = asteroids[i].x + 'px';
+            asteroid.style.top = asteroids[ i ].y + 'px';
+            asteroid.style.left = asteroids[ i ].x + 'px';
         }
 
-        function detectCollision(i) {
-            if (asteroids[i].x > x - 20 &&
-                asteroids[i].x < x + 30) {
+        function detectCollision( i ) {
+            if (asteroids[ i ].x > x - 20 &&
+                asteroids[ i ].x < x + 30) {
                 window.clearInterval(stepper);
                 alert("Game over");
             }

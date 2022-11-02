@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programmieren lernen</title>
+    <title>Userinput</title>
     <style>
         html {
             height: 100%;
@@ -18,8 +18,6 @@
             justify-content: center;
             flex-direction: column;
         }
-
-        body * {}
 
         input {
             padding: 10px;
@@ -49,32 +47,10 @@
 </head>
 
 <body>
-    <input id="birthday" onkeyup="getAge()" placeholder="Ihr Geburtsdatum">
-    <button type="button" onclick="getAge()">
-        Alter berechnen
-    </button>
-    <div id="result">&nbsp;</div>
     <script>
-        function getAge() {
-            let userInput = document.getElementById('birthday').value;
-
-            if (userInput.length < 4) {
-                return;
-            }
-
-            let distance = new Date() - new Date(userInput);
-
-            let age = new Date(distance).getFullYear() - 1970;
-
-            let response;
-            if (isNaN(age)) {
-                response = "Bitte verwenden Sie das Format yyyy.mm.dd";
-            } else {
-                response = "Sie sind " + age + " Jahre alt.";
-            }
-
-            document.getElementById('result').innerHTML = response;
-        }
+        let name = prompt( "Wie heißen Sie? ");
+        
+        alert( "Guten Tag, " + name );
     </script>
 </body>
 
