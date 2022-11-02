@@ -11,6 +11,8 @@ Dies ist das Repository für den **LinkedIn Learning** Kurs `[COURSENAME]`. Den 
 Dieses Repository beinhaltet den Beispielcode für das Training. Sie können alle 
 Dateien über den grünen Button "Code" und dann "Download ZIP" herunterladen.
 
+Den Beispielcode finden Sie im Ordner "Code".
+
 
 ## Installation
 
