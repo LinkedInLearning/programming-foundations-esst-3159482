@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,7 @@
             width: 800px;
             height: 500px;
             border: 1px solid black;
+            background: #ffffff;
         }
 
         #spacecraft {
@@ -22,6 +23,7 @@
             position: absolute;
             left: 0;
             bottom: 0;
+            caret-color: transparent;
         }
 
         .asteroid {
@@ -32,6 +34,7 @@
             position: absolute;
             left: 0;
             top: 0;
+            caret-color: transparent;
         }
     </style>
 </head>
@@ -74,11 +77,11 @@
         };
 
         function moveAsteroids() {
-            for (let i = 0; i < asteroids.length; i++) {
+            for ( let i = 0; i < asteroids.length; i++ ) {
                 asteroids[ i ].y += ( i + 6 );
                 displayAsteroid(i);
 
-                if (asteroids[ i ].y >= 450) {
+                if (asteroids[ i ].y >= 470) {
                     detectCollision(i);
                 }
 
@@ -96,13 +99,13 @@
 
         function displayAsteroid( i ) {
             let asteroid = document.querySelector('#asteroid' + i);
-            asteroid.style.top = asteroids[ i ].y + 'px';
+            asteroid.style.top  = asteroids[ i ].y + 'px';
             asteroid.style.left = asteroids[ i ].x + 'px';
         }
 
         function detectCollision( i ) {
             if (asteroids[ i ].x > x - 20 &&
-                asteroids[ i ].x < x + 30) {
+                asteroids[ i ].x < x + 30 ) {
                 window.clearInterval(stepper);
                 alert("Game over");
             }
