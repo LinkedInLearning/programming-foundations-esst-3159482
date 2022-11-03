@@ -49,9 +49,9 @@
         <div id="asteroid4" class="asteroid"></div>
     </div>
     <script>
-        var spacecraft = document.querySelector('#spacecraft');
-        var x = 235;
-        var asteroids = new Array(
+        let spacecraft = document.querySelector('#spacecraft');
+        let x = 235;
+        let asteroids = new Array(
             { x: 100, y: 0 },
             { x: 200, y: 20 },
             { x: 300, y: 10 },
@@ -59,7 +59,7 @@
             { x: 700, y: 40 }
         );
 
-        var stepper = window.setInterval(moveAsteroids, 50);
+        let stepper = window.setInterval(moveAsteroids, 50);
 
         spacecraft.style.left = x + 'px';
 
